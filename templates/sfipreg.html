@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/addstyle.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+
+        {% if ms2 %}
+        <script type="text/javascript">
+            alert("{{ ms2 }}")
+        </script>
+        {% endif %}
+        
+        <div class = "container-fluid">
+
+            <!-- HEADER -->
+                <div class="row">
+                    <div class="col-md-6" style="background-color: white; color: black; margin-bottom: 0%; padding-bottom: 2%; padding-top: 2%; padding-left: 1%; float:left;">
+                                
+                        <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serifs; text-align:left; "><u><b>IIITU-SFIP</b></u></h1>
+                    </div>
+                    <div class="col-md-6" style="float: right; vertical-align: middle;">
+                            
+                                    <div class="d-inline"><a href="#"><img src="static/iiitlogo.jpg" style="max-height: 100px; max-width: 100px; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
+                                    <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="#" class="fa fa-facebook"></a></div>
+                                    <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="#" class="fa fa-twitter"></a></div>
+                                    <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="#" class="fa fa-linkedin"></a></div>
+                                
+
+                        
+                    </div>
+                </div>
+
+
+                <!-- BODY -->
+                <div class="row" style="background-image: radial-gradient(rgb(185, 184, 184) 5%, gray 15%, black 60%);">
+                    <div class="col-md-12">
+                        <div class="row" style="min-height: 10vh"></div>
+                        <div class="row">
+                            <div class="col-md-4 offset-md-4" >
+                                    <div class="row">
+                                            <!-- <div class="col-md-2"></div> -->
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-12" style="background-color:gray; padding-top: 3%; padding-bottom: 1%;">
+                                                        <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;"><center><b>New User</b></center></h3>
+                                                        <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;"><center><b>REGISTRATION</b></center></h3>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-md-12" style="background-color: white; padding-top: 2%; padding-bottom: 1%; border-bottom-right-radius: 2%; border-bottom-left-radius: 2%;">
+                                                            <form name="signupForm" action="{{ url_for('register') }}" method="POST">
+
+                                                                        <!--<b>User Identity:</b>
+                                                                    
+                                                                        <select name="type" id="type" required title="Select whether you are Asha, ANM, MO, SPO etc.">
+                                                                        <option value="">Select Identity</option>
+                                                                        <option value="asha"><b>ASHA</b></option>
+                                                                        <option value="anm"><b>ANM</b></option>
+                                                                        <option value="medicalofficer"><b>MED OFF</b></option>
+                                                                        <option value="spo"><b>SPO</b></option>
+                                                                        </select>
+                                                                        <br><br>-->
+                                                
+                                                                <b>Name:</b>
+                                                                <input type="text" style="border: none; border-bottom: 1px solid #070707;" name="name" id="name" class="form-control" placeholder=" Enter Name" autocomplete= "off" pattern="[a-zA-Z]+([\s][a-zA-Z]+)*" title="Only alphabets(a-z,A-Z) and space(  ) allowed E.g. John Jordan" required>
+                                                                <br>
+
+                                                                <b>Roll No:</b>
+                                                                <input type="text" style="border: none; border-bottom: 1px solid #070707;" name="roll" id="user" class="form-control" placeholder=" Enter Roll.No." autocomplete= "off" maxlength="20" required>
+                                                                <br>
+                                                                <!-- validate -->
+                                                                <b>Branch:</b>
+                                                                <input type="text" style="border: none; border-bottom: 1px solid #070707;" name="branch" id="user" class="form-control" placeholder=" Enter Branch" autocomplete= "off" maxlength="20" required>
+                                                                <br>
+                                                                <!-- validate -->
+                                                                <b>Year:</b>
+                                                                <input type="text" style="border: none; border-bottom: 1px solid #070707;" name="year" id="user" class="form-control" placeholder=" Enter Current Year of study" autocomplete= "off" maxlength="20" required>
+                                                                <br>
+                                                                <!-- validate -->
+                                                                <b>Semester:</b>
+                                                                <input type="text" style="border: none; border-bottom: 1px solid #070707;" name="semester" id="user" class="form-control" placeholder=" Enter Semester" autocomplete= "off" maxlength="20" required>
+                                                                <br>
+
+                                                                <b>E-mail:</b>
+                                                                <input type="text" style="border: none; border-bottom: 1px solid #070707;" name="email" id="email" class="form-control" placeholder=" Enter E-mail id" autocomplete= "off" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" title="Enter a valid E-mail address, For e.g. John@gmail.com" required> 
+                                                                <br>
+
+                                                                <b>Mobile Number:</b>
+                                                                <input type="text" style="border: none; border-bottom: 1px solid #070707;" name="mobile" id="mobile" class="form-control" placeholder=" Enter Mobile Number" maxlength="10" autocomplete= "off" pattern="[0-9]{10}" title="Insert 10-digits Mobile Number" required>
+                                                                <br>
+
+
+                                                                <b>Password:</b>
+                                                                <input type="password" style="border: none; border-bottom: 1px solid #070707;" name="pass" id="pass" class="form-control" placeholder=" Enter Password" autocomplete= "off" maxlength="20" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}" title="Atleast: 8 characters,one UPPERCASE alphabet(A-Z),one lowercase alphabet(a-z),one number(0-9) and one special character(@$!%*?&)" required>
+                                                                
+                                                                <i class="material-icons" id="eyepass" style="float: right">
+                                                                        visibility
+                                                                        </i><br>
+
+
+                                                                
+                                                                <b>Confirm Password:</b>
+                                                                <input type="password" style="border: none; border-bottom: 1px solid #070707;" name="conpass" id="conpass" class="form-control" placeholder=" Re-enter Password" autocomplete= "off" maxlength="20" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}" title="Atleast: 8 characters,one UPPERCASE alphabet(A-Z),one lowercase alphabet(a-z),one number(0-9) and one special character(@$!%*?&)" required>
+                                                                <i class="material-icons" id="eyecon" style="float: right">
+                                                                        visibility
+                                                                        </i>
+
+                                                                <p id="confirm" style="color: red"></p><br>
+                                                                <center><input type="submit" name="register" id="register" class="btn btn-primary" value="REGISTER" style="background-color: black;"></center><br>
+                                                            </form>
+                                                        </div>
+                                                </div>
+                                                    
+                                                    
+                                            </div>
+                                            <!-- <div class="col-md-2"></div> -->
+                                        
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="row" style="min-height: 10vh"></div>
+                    </div>
+                </div>
+                
+                
+        </div>
+                
+
+            <!-- FOOTER -->
+            <div class="container-fluid" style="background-color: white; color: black; font-size: 10px">
+                    <h3 style="text-align: center"><u><b>DEVELOPERS</b></u>:</h3>
+                <div class="row">
+                        
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: gray">
+                        <h5>Anany Sharma</h5>
+                        <p>Email:</p>
+                        <p>Contact:</p>
+                        <p>Linkedin:</p>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(168, 167, 167)">
+                        <h5>Anand Kumar Pandey</h5>
+                        <p>Email:</p>
+                        <p>Contact:</p>
+                        <p>Linkedin:</p>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(202, 200, 200)">
+                        <h5>Shashank Dwivedi</h5>        
+                        <p>Email:</p>
+                        <p>Contact:</p>
+                        <p>Linkedin:</p>
+                    </div>
+                </div>
+            </div>
+        
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $('#register').on('click', function(){
+                
+                var pass = $('#pass').val();
+                var conpass = $('#conpass').val();
+                if(conpass != pass){
+                    $('#confirm').html('Passwords do not match!');
+                    $('#conpass').css('border','2px solid yellow');
+                    return false;
+                }
+            });
+            
+            $('#eyepass').on('click', function(){
+                var passwordField = $('#pass');
+                var passwordFieldType = passwordField.attr('type');
+                if(passwordFieldType == 'password'){
+                    passwordField.attr('type','text');
+                    $(this).text('visibility');
+                }
+                else{
+                    passwordField.attr('type','password');
+                    $(this).text('visibility_off');
+                }
+            
+                
+            });
+
+            $('#eyecon').on('click', function(){
+                var conpassField = $('#conpass');
+                var conpassFieldType = conpassField.attr('type');
+                if(conpassFieldType == 'password'){
+                    conpassField.attr('type','text');
+                    $(this).text('visibility');
+                }
+                else{
+                    conpassField.attr('type','password');
+                    $(this).text('visibility_off');
+                }
+            
+            
+                
+            });
+
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/addstyle.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <div class="container-fluid"> -->
+        
+    	{% if msg %}
+    	<script type="text/javascript">
+    		alert("{{ msg }}")
+    	</script>
+		{% endif %} 
+		{% if alr %}
+		<script type="text/javascript">
+    		alert("{{ alr }}")
+    	</script>
+		{% endif %} 
+    <div class = "container-fluid">
+
+        
+        <div class="row">
+            <div class="col-md-6" style="background-color: white; color: black; margin-bottom: 0%; padding-bottom: 2%; padding-top: 2%; padding-left: 1%; float:left">
+                        
+                <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serifs; text-align:left"><u><b>IIITU-SFIP</b></u></h1>
+            </div>
+            <div class="col-md-6" style="float: right; vertical-align: middle">
+
+                            <div class="d-inline"><a href="#"><img src="static/iiitlogo.jpg" style="max-height: 100px; max-width: 100px; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
+                            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="#" class="fa fa-facebook"></a></div>
+                            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="#" class="fa fa-twitter"></a></div>
+                            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="#" class="fa fa-linkedin"></a></div>
+                        
+
+            </div>
+        </div>
+
+
+        <div class="row" style="background-image: radial-gradient(rgb(185, 184, 184) 5%, gray 15%, black 60%);">
+            <div class="col-md-12">
+            <div class="row" style="min-height: 10vh;">
+                <div class="col-md-12" style="color: white; text-align:center; padding: 2%">
+                    <h3><u><b>Indian Institute of Information Technology Una</b></u></h3>
+                    <h5>Student Faculty Interaction Portal</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-6" style="text-align:justify; color: white">
+                            <h3><u>Objective</u>:</h3>
+                            <p>This website has been developed for providing a fast and convinient interaction between faculty and students.</p>
+                            <br><br>
+                            <h4><u>Provides</u>:</h4>
+                            <p>The portal currently contains Faculty Feedback System, in which the feedbacks for particular teacher are submitted by the students and the overall performance 
+                                of the teacher is analysed.
+                            </p>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- <div class="row" style="min-height: 10vw"></div> -->
+                    <div class="row">
+                        <!-- <div class="col-md-2"></div> -->
+                        <div class="col-md-10" style="background-color: white; border-radius: 5%">
+                            <div class="row">
+                                <div class="col-md-12" style="background-color:gray; padding-top: 3%; padding-bottom: 1%">
+                                    <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;"><center><b>USER LOGIN</b></center></h3><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-12" style="padding-top: 2%; padding-bottom: 1%">
+                                            <form name="loginForm" action="/login" method="POST" id="loginForm">
+
+                                                <label for="user"><b>Roll No:</b></label>
+                                                <input type="text" name="roll" class="form-control" placeholder=" Enter Roll No." autocomplete= "off" maxlength="20" required ><br>
+                                                
+                            
+                                                <label for="pass"><b>Password:</b></label>
+                                                <input type="password" name="password" id="password" class="form-control" placeholder=" Enter Password" autocomplete= "off" maxlength="20" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}" title="Atleast: 8 characters,one UPPERCASE alphabet(A-Z),one lowercase alphabet(a-z),one number(0-9) and one special character(@$!%*?&)" required>
+                                                <i class="material-icons" id="eye" style="float: right">
+                                                        visibility
+                                                        </i><br>
+            
+            
+                                            <center><input type="submit" name="submit" class="btn btn-primary" value="LOGIN" style="background-color: black; color:white;"></center><br>
+                                        </form>
+                                        <center>New User? <a href="/signup" style="color:black; font-size: 120%;font-weight: bold">Register Here</a></center>
+                                    </div>
+                            </div>
+                                
+                                
+                        </div>
+                        <div class="col-md-2"></div>
+                    
+                    </div>
+                    <div class="row" style="min-height: 10vw"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- <div class="row" style="min-height: 50vw">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: gray; min-height: 100%; padding-top: 2%; color: white; text-align: center; text-align: justify">
+                <h3 style="text-align: center"><u>Student Portal</u></h3><br>
+                <p>Student's Portal provides facilities like:</p>
+                <ol type="1">
+                    <li>Provide faculty feedback</li>
+                    <li>Submit Assignments</li>
+                    <li>View evaluated answer sheets</li>
+                    <li>Doubt Clearence</li>
+                    <li>Books, Pdfs and Notes</li><br>
+                    <button type="button" class="studbtn" style="color: white; align-self: center"><p style="color: black">Student Login</p></button>
+                </ol>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(168, 167, 167); min-height: 100%; padding-top: 2%; color: rgb(110, 29, 110); text-align: center; text-align: justify">
+                <h3 style="text-align: center"><u>Faculty Portal</u></h3><br>
+                <p>Faculty's Portal provides facilities like:</p>
+                <ol type="1">
+                    <li>Provide Student feedback</li>
+                    <li>Assigning Projects</li>
+                    <li>Submit evaluated answer sheets</li>
+                    <li>Student's doubt Clearence</li>
+                    <li>Provide Books, Pdfs and Notes</li><br>
+                    <button type="button" class="fcltybtn" style="color: white; align-self: center"><p style="color: black">Faculty Login</p></button>
+                </ol>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(219, 218, 218); min-height: 100%; padding-top: 2%; color: black; text-align: center; text-align: justify">
+                <h3 style="text-align: center"><u>Director Portal</u></h3><br>
+                <p>Director's Portal provides facilities like:</p>
+                <ol type="1">
+                    <li>View Students Performance</li>
+                    <li>View Faculty Performance</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li><br>
+                    <button type="button" class="drctbtn" style="color: white; align-self: center"><p style="color: black">Director Login</p></button>
+                </ol>
+            </div>
+            
+        </div> -->
+        
+    </div>
+        
+    <div class="container-fluid" style="background-color: white; color: black; font-size: 10px">
+            <h3 style="text-align: center"><u><b>DEVELOPERS</b></u>:</h3>
+        <div class="row">
+                
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: gray">
+                <h5>Anany Sharma</h5>
+                <p>Email:</p>
+                <p>Contact:</p>
+                <p>Linkedin:</p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(168, 167, 167)">
+                <h5>Anand Kumar Pandey</h5>
+                <p>Email:</p>
+                <p>Contact:</p>
+                <p>Linkedin:</p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(202, 200, 200)">
+                <h5>Shashank Dwivedi</h5>        
+                <p>Email:</p>
+                <p>Contact:</p>
+                <p>Linkedin:</p>
+            </div>
+        </div>
+    </div>
+
+            
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#eye').on('click', function(){
+                var passwordField = $('#password');
+                var passwordFieldType = passwordField.attr('type');
+                if(passwordFieldType == 'password'){
+                    passwordField.attr('type','text');
+                    $(this).text('visibility');
+                }
+                else{
+                    passwordField.attr('type','password');
+                    $(this).text('visibility_off');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
