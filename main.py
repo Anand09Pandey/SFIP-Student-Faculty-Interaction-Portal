@@ -1,5 +1,7 @@
 from flask import Flask, render_template ,request,url_for,escape,session,redirect,abort
 import sqlite3 as sql
+import student
+import admin
 from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 app.secret_key = 'any random string'
@@ -54,7 +56,7 @@ def login():
 				semester = cur.fetchone();
 				cur.execute("select * from profs where branch=? and semester=? ",(branch[0],semester[0]))
 				lis=cur.fetchall()
-				return render_template('stform.html',lis=lis)
+				return render_template('show_profs.html',lis=lis)
 			else:
 				alr="wrong password"
 				return render_template('sfiplogin.html',alr=alr)
@@ -63,7 +65,7 @@ def login():
 			return render_template('sfiplogin.html',alr=alr)
 	else:
 		session['roll_no']=request.args.get('roll_no')
-		return render_template('stform.html')
+		return render_template('show_profs.html')
 	con.close()
 #logout as a user
 @app.route('/logout')
