@@ -63,7 +63,7 @@ def login():
 			return render_template('sfiplogin.html',alr=alr)
 	else:
 		session['roll_no']=request.args.get('roll_no')
-		return render_template('front.html')
+		return render_template('stform.html')
 	con.close()
 #logout as a user
 @app.route('/logout')
