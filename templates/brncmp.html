@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/addstyle.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+</head>
+<body>
+
+    {% if msgx %}
+    <script type="text/javascript">
+        alert("{{ msgx }}")
+
+    </script>
+    {% endif %}
+    <!-- <div class="container-fluid"> -->
+        
+
+<div class = "container-fluid">
+
+    
+    <div class="row">
+        <div class="col-md-6" style="background-color: white; color: black; margin-bottom: 0%; padding-bottom: 2%; padding-top: 2%; padding-left: 1%; float:left">
+                    
+            <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serifs; text-align:left; font-size: 3vmax"><u><b>IIITU-SFIP</b></u></h1>
+        </div>
+        <div class="col-md-6" style="float: right; vertical-align: middle">
+
+            <div class="d-inline"><a href="http://iiitu.ac.in"><img src="static/iiitlogo.jpg" style="max-height: 8vmax; max-width: 8vmax; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="https://www.facebook.com/iiituna/" class="fa fa-facebook"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://twitter.com/iiituna" class="fa fa-twitter"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://www.linkedin.com/school/iiituna/" class="fa fa-linkedin"></a></div>
+                    
+
+        </div>
+    </div>
+
+
+    <div class="row" style="background-image: radial-gradient(rgb(185, 184, 184) 5%, gray 15%, black 60%);min-height: 50vh">
+        <div class="col-md-12">
+                <div class="row" style="min-height: 10vh">
+                        <div class="col-md-12" style="text-align: center; color: white; font-family: Georgia, 'Times New Roman', Times, serif; padding: 2%">
+                            <h3 style=" font-size: 2vmax"><u><b>Teacher Performance Comparison</b></u></h3>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-2" style="margin-bottom: 10vh"></div>
+                        <div class="col-md-8" style="color: white; margin-bottom: 10vh">
+                            <!-- <h1> {{prof}} 
+                            </h1> -->
+                             <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                            <script>
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                            animationEnabled: true,
+                            theme: "l1", // "light1", "light2", "dark1", "dark2"
+                             title:{
+                             text: "Branchwise Performance"
+                             },
+                            axisY: {
+                            title: "Feedback Rating"
+                            },
+                            data: [{        
+                            type: "column",  
+                            showInLegend: true, 
+                            legendMarkerColor: "black",
+                            legendText: "Teacher List",
+                            dataPoints: [   
+                            {y: {{list[0]}}, label:"{{tech[0]}}" },
+                            {y: {{list[1]}}, label:"{{tech[1]}}" },
+                            {y: {{list[2]}}, label:"{{tech[2]}}" },
+                            {y: {{list[3]}}, label:"{{tech[3]}}" },
+                            {y: {{list[4]}}, label:"{{tech[4]}}" },
+                            {y: {{list[5]}}, label:"{{tech[5]}}" }
+                            
+                            ]
+                            }]
+                            });
+                           
+                            chart.render();
+                            </script>
+
+                                
+                            
+                        </div>
+                        <div class="col-md-2" style="margin-bottom: 10vh"></div>
+                    </div>
+        
+                </div>
+        
+        </div>
+
+        
+    </div>
+    
+</div>      
+</body>
+</html>

@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <!-- <div class="container-fluid"> -->
         
     	{% if msg %}
@@ -33,10 +33,10 @@
             </div>
             <div class="col-md-6" style="float: right; vertical-align: middle">
 
-                            <div class="d-inline"><a href="#"><img src="static/iiitlogo.jpg" style="max-height: 8vmax; max-width: 8vmax; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
-                            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="#" class="fa fa-facebook"></a></div>
-                            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="#" class="fa fa-twitter"></a></div>
-                            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="#" class="fa fa-linkedin"></a></div>
+                <div class="d-inline"><a href="http://iiitu.ac.in" target="_blank" rel="noopener noreferrer"><img src="static/iiitlogo.jpg" style="max-height: 8vmax; max-width: 8vmax; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
+                <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="https://www.facebook.com/iiituna/" class="fa fa-facebook" target="_blank" rel="noopener noreferrer"></a></div>
+                <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://twitter.com/iiituna" class="fa fa-twitter" target="_blank" rel="noopener noreferrer"></a></div>
+                <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://www.linkedin.com/school/iiituna/" class="fa fa-linkedin" target="_blank" rel="noopener noreferrer"></a></div>
                         
 
             </div>
@@ -57,7 +57,7 @@
                         <div class="col-md-2"></div>
                         <div class="col-md-6" style="text-align:justify; color: white">
                             <h3 style="font-size: 2vmax"><u>Objective</u>:</h3>
-                            <p style="font-size: 1.5vmax">This website has been developed for providing a fast and convinient interaction between faculty and students.</p>
+                            <p style="font-size: 1.5vmax">This website has been developed for providing a fast and convenient interaction between faculty and students.</p>
                             <br><br>
                             <h4 style="font-size: 2vmax"><u>Provides</u>:</h4>
                             <p style="font-size: 1.5vmax">The portal currently contains Faculty Feedback System, in which the feedbacks for particular teacher are submitted by the students and the overall performance 
@@ -86,7 +86,7 @@
                                                 
                             
                                                 <label for="pass"><b>Password:</b></label>
-                                                <input type="password" name="password" id="password" class="form-control" placeholder=" Enter Password" autocomplete= "off" maxlength="20" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}" title="Atleast: 8 characters,one UPPERCASE alphabet(A-Z),one lowercase alphabet(a-z),one number(0-9) and one special character(@$!%*?&)" required>
+                                                <input type="password" name="password" id="password" class="form-control" placeholder=" Enter Password" autocomplete= "off" maxlength="20" pattern="^[a-zA-Z0-9@]{8,20}$" title="Atleast: 8 alphanumeric characters !!" required>
                                                 <i class="material-icons" id="eye" style="float: right">
                                                         visibility
                                                         </i><br>
@@ -158,21 +158,18 @@
                 
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: gray">
                 <h5 style="font-size: 2vmax">Anany Sharma</h5>
-                <p>Email:</p>
-                <p>Contact:</p>
-                <p>Linkedin:</p>
+                <p>Email: 17302@iiitu.ac.in</p>
+                <p>Linkedin: <a href="https://www.linkedin.com/in/anany-sharma-80a413162/" style="color: brown" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/anany-sharma-80a413162/</a></p>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(168, 167, 167)">
                 <h5 style="font-size: 2vmax">Anand Kumar Pandey</h5>
-                <p>Email:</p>
-                <p>Contact:</p>
-                <p>Linkedin:</p>
+                <p>Email: 17303@iiitu.ac.in</p>
+                <p>Linkedin: <a href="https://www.linkedin.com/in/anand-kumar-pandey-367821178/" style="color: brown" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/anand-kumar-pandey-367821178/</a></p>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(202, 200, 200)">
                 <h5 style="font-size: 2vmax">Shashank Dwivedi</h5>        
-                <p>Email:</p>
-                <p>Contact:</p>
-                <p>Linkedin:</p>
+                <p>Email: 17333@iiitu.ac.in</p>
+                <p>Linkedin: <a href="https://www.linkedin.com/in/shashank-kumar-dwivedi/" style="color: brown" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/shashank-kumar-dwivedi/</a></p>
             </div>
         </div>
     </div>
@@ -180,6 +177,11 @@
             
 
     <script type="text/javascript">
+        window.history.forward();
+        function noBack()
+        {
+            window.history.forward();
+        }
         $(document).ready(function(){
             $('#eye').on('click', function(){
                 var passwordField = $('#password');

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/addstyle.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+    <!-- <div class="container-fluid"> -->
+        
+
+<div class = "container-fluid">
+
+    
+    <div class="row">
+        <div class="col-md-6" style="background-color: white; color: black; margin-bottom: 0%; padding-bottom: 2%; padding-top: 2%; padding-left: 1%; float:left">
+                    
+            <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serifs; text-align:left; font-size: 3vmax"><u><b>IIITU-SFIP</b></u></h1>
+        </div>
+        <div class="col-md-6" style="float: right; vertical-align: middle">
+
+            <div class="d-inline"><a href="http://iiitu.ac.in"><img src="static/iiitlogo.jpg" style="max-height: 8vmax; max-width: 8vmax; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="https://www.facebook.com/iiituna/" class="fa fa-facebook"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://twitter.com/iiituna" class="fa fa-twitter"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://www.linkedin.com/school/iiituna/" class="fa fa-linkedin"></a></div>
+                    
+
+        </div>
+    </div>
+
+
+    <div class="row" style="background-image: radial-gradient(rgb(185, 184, 184) 5%, gray 15%, black 60%);min-height: 50vh">
+        <div class="col-md-12">
+            <div class="row" style="min-height: 10vh">
+                <div class="col-md-12" style="text-align: center; color: white; font-family: Georgia, 'Times New Roman', Times, serif; padding: 2%">
+                    <h3 style=" font-size: 2vmax"><u><b>Teacher Management Portal</b></u></h3>
+                </div>
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" style="color: white">
+                    
+                </div>
+                <div class="col-md-2"></div>
+
+            </div> -->
+            
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" style="color: white">
+                    <form class="feedfrm" action="/Purpose" method="POST">
+                        
+                        Branch:
+                        <select style="border: none; border-bottom: 1px solid #070707;" name="branch" autocomplete= "off" required>
+                            <option value="it">IT</option>
+                            <option value="cse">CSE</option>
+                            <option value="ece">ECE</option>
+                        </select>
+                        <br>
+                        <br>        
+                        Semester:
+                        <select style="border: none; border-bottom: 1px solid #070707;" name="semester" autocomplete= "off" required>
+                            <option value="1">1st</option>
+                            <option value="2">2nd</option>
+                            <option value="3">3rd</option>
+                            <option value="4">4th</option>
+                            <option value="5">5th</option>
+                            <option value="6">6th</option>
+                            <option value="7">7th</option>
+                            <option value="8">8th</option>
+                        </select>
+                        <br>
+                        <br>
+                        Purpose:
+                        <select style="border: none; border-bottom: 1px solid #070707;" name="purpose" autocomplete= "off" required>
+                            <option value="add_delete">Add or Delete</option>
+                            <option value="evaluate">Evaluation</option>
+                        </select>
+                        <br>
+                        <br>
+                        <input type="submit" name="add" value="Submit">
+                    </form><br><br>
+                    <form action="/overall" method="POST">
+                        <input type ="submit" value="Overall Teacher Performance Comparison">
+                    </form><br><br>
+                    <center><a href="logout" class="btn btn-default" style="background-color: white; color: black; margin-bottom: 2%"  onclick="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">LOGOUT</a></center>
+                </div>
+                <div class="col-md-2"></div>
+
+            </div>
+
+        </div>
+
+        
+    </div>
+    
+</div>
+        
+<!-- <div class="container-fluid" style="background-color: white; color: black; font-size: 10px">
+        <h3 style="text-align: center"><u><b>DEVELOPERS</b></u>:</h3>
+    <div class="row">
+            
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: gray">
+            <h5>Anany Sharma</h5>
+            <p>Email:</p>
+            <p>Contact:</p>
+            <p>Linkedin:</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(168, 167, 167)">
+            <h5>Anand Kumar Pandey</h5>
+            <p>Email:</p>
+            <p>Contact:</p>
+            <p>Linkedin:</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" style="background-color: rgb(202, 200, 200)">
+            <h5>Shashank Dwivedi</h5>        
+            <p>Email:</p>
+            <p>Contact:</p>
+            <p>Linkedin:</p>
+        </div>
+    </div>
+</div> -->
+
+<style>
+    @media only screen and (max-width: 480px) {
+    /* horizontal scrollbar for tables if mobile screen */
+    .tablemobile {
+        overflow-x: auto;
+        display: block;
+    }
+}
+</style>
+
+<script language="JavaScript">
+    window.history.forward();
+	function noBack() { window.history.forward();}
+    function processUser()
+    {
+      var parameters = location.search.substring(1).split("&");
+  
+      var temp = parameters[0].split("=");
+      l = unescape(temp[1]);
+      temp = parameters[1].split("=");
+      p = unescape(temp[1]);
+      document.getElementById("teacher").value = l;
+      document.getElementById("subject").value = p;
+    }
+    
+  </script>
+            
+</body>
+</html>

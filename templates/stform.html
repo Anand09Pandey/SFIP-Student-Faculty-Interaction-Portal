@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="processUser()">
     <!-- <div class="container-fluid"> -->
         
 
@@ -24,10 +24,10 @@
         </div>
         <div class="col-md-6" style="float: right; vertical-align: middle">
 
-                        <div class="d-inline"><a href="#"><img src="static/iiitlogo.jpg" style="max-height: 8vmax; max-width: 8vmax; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
-                        <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="#" class="fa fa-facebook"></a></div>
-                        <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="#" class="fa fa-twitter"></a></div>
-                        <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="#" class="fa fa-linkedin"></a></div>
+            <div class="d-inline"><a href="http://iiitu.ac.in"><img src="static/iiitlogo.jpg" style="max-height: 8vmax; max-width: 8vmax; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="https://www.facebook.com/iiituna/" class="fa fa-facebook"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://twitter.com/iiituna" class="fa fa-twitter"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://www.linkedin.com/school/iiituna/" class="fa fa-linkedin"></a></div>
                     
 
         </div>
@@ -41,15 +41,28 @@
                     <h3 style=" font-size: 2vmax"><u><b>Teacher Feedback Form</b></u></h3>
                 </div>
             </div>
+<!-- 
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" style="color: white">
+                    
+                </div>
+                <div class="col-md-2"></div>
+
+            </div> -->
             
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8" style="color: white">
-                    <form method="POST">
-                        Name of Lecturer: <input type="text" name="lecturer" style="display: inline;">
+                    <form class="feedfrm" action="/feedback" method="POST">
+                        <h5>Teacher Name: <input type="text" name="lecturer" id="teacher" style="color: black" readonly ></h5>
+                        <h5>Subject: <input type="text" name="subject" id="subject" style="color: black" readonly></h5>
+                        <h5>Semester: {{semester}} </h5>
+                        <h5>Branch: {{branch}} </h5><br>
+                        <!-- Name of Lecturer: <input type="text" name="lecturer" style="display: inline;">
                         <p style="float: right">Subject: <input type="text" name="subject" style="display: inline"></p><br><br>
-                        
-                        <table class="table table-borderless" style="background-color: white; color: black;">
+                         -->
+                        <table class="table table-borderless tablemobile" style="background-color: white; color: black;">
                             <thead>
                                 <tr>
                                     <th><b>The lecturer:</b></th>
@@ -63,95 +76,95 @@
                             <tbody>
                                 <tr>
                                     <td>a) was well prepared</td>
-                                    <td><input type="radio" name="preparedness" value="-100"></td>
-                                    <td><input type="radio" name="preparedness" value="-50"></td>
-                                    <td><input type="radio" name="preparedness" value="0"></td>
-                                    <td><input type="radio" name="preparedness" value="50"></td>
+                                    <td><input type="radio" name="preparedness" value="10"></td>
+                                    <td><input type="radio" name="preparedness" value="20"></td>
+                                    <td><input type="radio" name="preparedness" value="50" checked></td>
+                                    <td><input type="radio" name="preparedness" value="70"></td>
                                     <td><input type="radio" name="preparedness" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>b) gave interesting and informative classes</td>
-                                        <td><input type="radio" name="informative" value="-100"></td>
-                                        <td><input type="radio" name="informative" value="-50"></td>
-                                        <td><input type="radio" name="informative" value="0"></td>
-                                        <td><input type="radio" name="informative" value="50"></td>
+                                        <td><input type="radio" name="informative" value="10"></td>
+                                        <td><input type="radio" name="informative" value="20"></td>
+                                        <td><input type="radio" name="informative" value="50" checked></td>
+                                        <td><input type="radio" name="informative" value="70"></td>
                                         <td><input type="radio" name="informative" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>c) was good at explaining things</td>
-                                        <td><input type="radio" name="explaining" value="-100"></td>
-                                        <td><input type="radio" name="explaining" value="-50"></td>
-                                        <td><input type="radio" name="explaining" value="0"></td>
-                                        <td><input type="radio" name="explaining" value="50"></td>
+                                        <td><input type="radio" name="explaining" value="10"></td>
+                                        <td><input type="radio" name="explaining" value="20"></td>
+                                        <td><input type="radio" name="explaining" value="50" checked></td>
+                                        <td><input type="radio" name="explaining" value="70"></td>
                                         <td><input type="radio" name="explaining" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>d) taught at an appropriate pace</td>
-                                        <td><input type="radio" name="pace" value="-100"></td>
-                                        <td><input type="radio" name="pace" value="-50"></td>
-                                        <td><input type="radio" name="pace" value="0"></td>
-                                        <td><input type="radio" name="pace" value="50"></td>
+                                        <td><input type="radio" name="pace" value="10"></td>
+                                        <td><input type="radio" name="pace" value="20"></td>
+                                        <td><input type="radio" name="pace" value="50" checked></td>
+                                        <td><input type="radio" name="pace" value="70"></td>
                                         <td><input type="radio" name="pace" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>e) was effective in leading the class</td>
-                                        <td><input type="radio" name="leading" value="-100"></td>
-                                        <td><input type="radio" name="leading" value="-50"></td>
-                                        <td><input type="radio" name="leading" value="0"></td>
-                                        <td><input type="radio" name="leading" value="50"></td>
+                                        <td><input type="radio" name="leading" value="10"></td>
+                                        <td><input type="radio" name="leading" value="20"></td>
+                                        <td><input type="radio" name="leading" value="50" checked></td>
+                                        <td><input type="radio" name="leading" value="70"></td>
                                         <td><input type="radio" name="leading" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>f) was receptive to students' questions</td>
-                                        <td><input type="radio" name="receptive" value="-100"></td>
-                                        <td><input type="radio" name="receptive" value="-50"></td>
-                                        <td><input type="radio" name="receptive" value="0"></td>
-                                        <td><input type="radio" name="receptive" value="50"></td>
+                                        <td><input type="radio" name="receptive" value="10"></td>
+                                        <td><input type="radio" name="receptive" value="20"></td>
+                                        <td><input type="radio" name="receptive" value="50" checked></td>
+                                        <td><input type="radio" name="receptive" value="70"></td>
                                         <td><input type="radio" name="receptive" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>g) stimulated interest in the subject</td>
-                                        <td><input type="radio" name="interest" value="-100"></td>
-                                        <td><input type="radio" name="interest" value="-50"></td>
-                                        <td><input type="radio" name="interest" value="0"></td>
-                                        <td><input type="radio" name="interest" value="50"></td>
+                                        <td><input type="radio" name="interest" value="10"></td>
+                                        <td><input type="radio" name="interest" value="20"></td>
+                                        <td><input type="radio" name="interest" value="50" checked></td>
+                                        <td><input type="radio" name="interest" value="70"></td>
                                         <td><input type="radio" name="interest" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>h) stimulated discussion on the subject</td>
-                                        <td><input type="radio" name="discussion" value="-100"></td>
-                                        <td><input type="radio" name="discussion" value="-50"></td>
-                                        <td><input type="radio" name="discussion" value="0"></td>
-                                        <td><input type="radio" name="discussion" value="50"></td>
+                                        <td><input type="radio" name="discussion" value="10"></td>
+                                        <td><input type="radio" name="discussion" value="20"></td>
+                                        <td><input type="radio" name="discussion" value="50" checked></td>
+                                        <td><input type="radio" name="discussion" value="70"></td>
                                         <td><input type="radio" name="discussion" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>i) stimulated me to think and learn</td>
-                                        <td><input type="radio" name="learn" value="-100"></td>
-                                        <td><input type="radio" name="learn" value="-50"></td>
-                                        <td><input type="radio" name="learn" value="0"></td>
-                                        <td><input type="radio" name="learn" value="50"></td>
+                                        <td><input type="radio" name="learn" value="10"></td>
+                                        <td><input type="radio" name="learn" value="20"></td>
+                                        <td><input type="radio" name="learn" value="50" checked></td>
+                                        <td><input type="radio" name="learn" value="70"></td>
                                         <td><input type="radio" name="learn" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>j) had a good rapport with the class</td>
-                                        <td><input type="radio" name="rapport" value="-100"></td>
-                                        <td><input type="radio" name="rapport" value="-50"></td>
-                                        <td><input type="radio" name="rapport" value="0"></td>
-                                        <td><input type="radio" name="rapport" value="50"></td>
+                                        <td><input type="radio" name="rapport" value="10"></td>
+                                        <td><input type="radio" name="rapport" value="20"></td>
+                                        <td><input type="radio" name="rapport" value="50" checked></td>
+                                        <td><input type="radio" name="rapport" value="70"></td>
                                         <td><input type="radio" name="rapport" value="100"></td>
                                 </tr>
                                 <tr>
                                         <td>k) was available to answer questions in office hours</td>
-                                        <td><input type="radio" name="available" value="-100"></td>
-                                        <td><input type="radio" name="available" value="-50"></td>
-                                        <td><input type="radio" name="available" value="0"></td>
-                                        <td><input type="radio" name="available" value="50"></td>
+                                        <td><input type="radio" name="available" value="10"></td>
+                                        <td><input type="radio" name="available" value="20"></td>
+                                        <td><input type="radio" name="available" value="50" checked></td>
+                                        <td><input type="radio" name="available" value="70"></td>
                                         <td><input type="radio" name="available" value="100"></td>
                                 </tr>
                             </tbody>
                         </table>
-                        <center><input type="submit" value="SUBMIT" style="background-color: white; color: black; margin-bottom: 2%"></center>
+                        <center><input type="submit" name="formsubmit" value="SUBMIT" style="background-color: white; color: black; margin-bottom: 2%"></center>
                     </form>
                 </div>
                 <div class="col-md-2"></div>
@@ -190,6 +203,30 @@
     </div>
 </div> -->
 
+<style>
+    @media only screen and (max-width: 480px) {
+    /* horizontal scrollbar for tables if mobile screen */
+    .tablemobile {
+        overflow-x: auto;
+        display: block;
+    }
+}
+</style>
+
+<script language="JavaScript">
+    function processUser()
+    {
+      var parameters = location.search.substring(1).split("&");
+  
+      var temp = parameters[0].split("=");
+      l = unescape(temp[1]);
+      temp = parameters[1].split("=");
+      p = unescape(temp[1]);
+      document.getElementById("teacher").value = l;
+      document.getElementById("subject").value = p;
+    }
+    
+  </script>
             
 </body>
 </html>
